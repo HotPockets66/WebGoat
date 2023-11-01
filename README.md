@@ -6,3 +6,7 @@ The project requires `.NET 7 SDK`
 
 ## Start the application
 Excute `dotnet run`
+
+## Reset database
+The database used is persisted in the file `NORTHWND.sqlite`. To reset the database, simply replace the 
+file with the one from repository.
