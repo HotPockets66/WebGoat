@@ -126,7 +126,7 @@ namespace WebGoatCore
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            
+            //TODO Tjek om man er i developer mode og læg det i en variabel om man er i developer mode osv
             app.UseDeveloperExceptionPage();
             
             app.UseStatusCodePagesWithRedirects($"/{StatusCodeController.NAME}?code={{0}}");
