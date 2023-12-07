@@ -96,7 +96,10 @@ namespace WebGoatCore.Controllers
         {
             try
             {
-                _productRepository.Add(product);
+                if (ModelState.IsValid)
+                {
+                    _productRepository.Add(product);
+                }
                 return RedirectToAction("Edit", new { id = product.ProductId });
             }
             catch

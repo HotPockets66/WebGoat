@@ -42,7 +42,7 @@
                 {
                     <option value="@category.CategoryId"
                             title="@category.Description"
-                            selected=@(Model.Product?.CategoryId == category.CategoryId ? "selected" : null)>
+                            selected=@(Model.Product?.CategoryId.getCategoryID() == category.CategoryId ? "selected" : null)>
                         @category.CategoryName
                     </option>
                 }
@@ -56,9 +56,9 @@
             @Html.ValidationMessageFor(m => m.Product.QuantityPerUnit)
         </p>
         <p>
-            @Html.LabelFor(m => m.Product.DecimalUnitPrice)
-            @Html.TextBoxFor(m => m.Product.DecimalUnitPrice, new { @value = Model.Product?.DecimalUnitPrice })
-            @Html.ValidationMessageFor(m => m.Product.DecimalUnitPrice)
+            @Html.LabelFor(m => m.Product.UnitPrice)
+            @Html.TextBoxFor(m => m.Product.UnitPrice, new { @value = Model.Product?.UnitPrice })
+            @Html.ValidationMessageFor(m => m.Product.UnitPrice)
         </p>
         <p>
             @Html.LabelFor(m => m.Product.UnitsInStock)
@@ -98,7 +98,7 @@
         }
         <p>
             @{ #pragma warning disable CS8602 } <!-- False positive, cannot happen in template usage -->
-            @Html.CheckBoxFor(m => m.Product.Discontinued, new { @checked = Model.Product?.Discontinued ?? false })
+            @Html.CheckBoxFor(m => m.Product.Discontinued.getDiscontinued(), new { @checked = Model.Product?.Discontinued.getDiscontinued() ?? false })
             @Html.LabelFor(m => m.Product.Discontinued)
             @{ #pragma warning restore CS8602 }
         </p>

@@ -8,6 +8,7 @@ namespace WebGoat.NET.Models.Products
 
         public UnitsInStock(short UnitsInStock)
         {
+            isUnitsInStockValidAmount(UnitsInStock);
             this.unitsInStock = UnitsInStock;
         }
 

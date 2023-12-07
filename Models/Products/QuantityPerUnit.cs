@@ -8,6 +8,7 @@ namespace WebGoat.NET.Models.Products
 
         public QuantityPerUnit(int quantityPerUnit)
         {
+            isQuantityPerUnitValidAmount(quantityPerUnit);
             this.quantityPerUnit = quantityPerUnit;
         }
 

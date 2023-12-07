@@ -9,6 +9,8 @@ namespace WebGoat.NET.Models.Products
 
         public ProductName(string productName)
         {
+            IsProductNameCharactersAmountValid(productName);
+            IsProductNameValid(productName);
             this.productName = productName;
         }
 

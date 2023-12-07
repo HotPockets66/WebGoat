@@ -1,35 +1,48 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using WebGoat.NET.Models.Products;
+using WebGoat.NET.Moels.Products;
 
 #pragma warning disable CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
 namespace WebGoatCore.Models
 {
     public class Product
     {
+        [Required]
         [Display(Name = "Product Id:")]
-        public int ProductId { get; set; }
+        public ProductID ProductId { get; set; }
+
         [Display(Name = "Product Name:")]
-        public string ProductName { get; set; }
-        public int SupplierId { get; set; }
-        public int CategoryId { get; set; }
+        public ProductName ProductName { get; set; }
+
+        [Required]
+        public SupplierID SupplierId { get; set; }
+
+        [Required]
+        public CategoryID CategoryId { get; set; }
+
         [Display(Name = "Quantity per unit:")]
-        public string QuantityPerUnit { get; set; }
+        public QuantityPerUnit QuantityPerUnit { get; set; }
+
         [Display(Name = "Unit price:")]
-        public double UnitPrice { get; set; }
+        public UnitPrice UnitPrice { get; set; }
+
         [Display(Name = "Units in stock:")]
-        public short UnitsInStock { get; set; }
+        public UnitsInStock UnitsInStock { get; set; }
+
         [Display(Name = "Units on order:")]
-        public short UnitsOnOrder { get; set; }
+        public UnitsOnOrder UnitsOnOrder { get; set; }
+
         [Display(Name = "Reorder level:")]
-        public short ReorderLevel { get; set; }
+        public ReorderLevel ReorderLevel { get; set; }
+
         [Display(Name = "Discontinued")]
-        public bool Discontinued { get; set; }
+        public Discontinued Discontinued { get; set; }
 
         [Display(Name = "Category:")]
         public virtual Category Category { get; set; }
+
         [Display(Name = "Supplier:")]
         public virtual Supplier Supplier { get; set; }
-
-        public decimal DecimalUnitPrice => Convert.ToDecimal(this.UnitPrice);
     }
 }

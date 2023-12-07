@@ -49,7 +49,7 @@ namespace WebGoatCore.Controllers
                     ProductId = productId,
                     Quantity = quantity,
                     Product = product,
-                    UnitPrice = product.UnitPrice
+                    UnitPrice = Convert.ToDouble(product.UnitPrice)
                 };
                 cart.OrderDetails.Add(orderDetail.ProductId, orderDetail);
             }
